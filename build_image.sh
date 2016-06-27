@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --no-cache -t charlesmknox/rpi-samba:v2 .
+docker build --no-cache -t charlesmknox/samba:latest .
