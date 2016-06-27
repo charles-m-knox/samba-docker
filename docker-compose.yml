@@ -1,0 +1,18 @@
+version: '2'
+#volumes:
+services:
+  smbshare:
+    image: charlesmknox/samba:latest
+    restart: always
+    ports:
+      - 137:137/tcp
+      - 137:137/udp
+      - 138:138/tcp
+      - 138:138/udp
+      - 139:139
+      - 445:445
+      - 445:445/udp
+    #hostname: parenthostname
+    volumes:
+      - /mnt/smbsharefolder:/share/data
+    command: -u "user:password" -u "user2:password" -s "smbsharename:/share/data:rw:user,user2"
