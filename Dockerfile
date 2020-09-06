@@ -1,5 +1,6 @@
 FROM alpine
-MAINTAINER charles.m.knox@gmail.com
+
+LABEL maintainer="charlesmknox"
 
 RUN apk update && apk upgrade && apk add bash samba-common-tools samba && rm -rf /var/cache/apk/*
 

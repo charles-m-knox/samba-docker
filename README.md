@@ -2,6 +2,8 @@
 
 Docker container that creates an SMB share.
 
+***Note: As of 9/5/2020, this image does not appear to work anymore.***
+
 ## Running
 
 ```bash
@@ -31,7 +33,6 @@ Additionally, the supplied hostname will be used for the NetBIOS name.
 Two users will be created and given various access to four shares.
 Omitting users from a share results in guest access.
 The `public` share will have guest access and be browsable.
-
 
 ## Docker-compose Example
 

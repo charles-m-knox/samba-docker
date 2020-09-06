@@ -1,3 +1,5 @@
+---
+
 version: '2'
 #volumes:
 services:
@@ -12,7 +14,6 @@ services:
       - 139:139
       - 445:445
       - 445:445/udp
-    #hostname: parenthostname
     volumes:
-      - /mnt/smbsharefolder:/share/data
+      - ./testdir:/share/data
     command: -u "user:password" -u "user2:password" -s "smbsharename:/share/data:rw:user,user2"
