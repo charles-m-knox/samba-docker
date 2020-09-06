@@ -1,8 +1,10 @@
-Docker container that creates a SMB share.
+# Samba Docker Container
+
+Docker container that creates an SMB share.
 
 ## Running
 
-```
+```bash
 docker run -d \
   -p 137:137/udp \
   -p 138:138/udp \
@@ -12,7 +14,8 @@ docker run -d \
   --restart='always' \
   --hostname 'filer' \
   -v /media/stick:/share/stick \
-  --name samba dastrasmue/rpi-samba:v2 \
+  --name samba
+  charlesmknox/samba:latest \
   -u "alice:abc123" \
   -u "bob:secret" \
   -s "Backup directory:/share/stick/backups:rw:alice,bob" \
@@ -26,7 +29,7 @@ This example will bind `smbd` to docker host ip address
 and mount two directories on docker host to container.
 Additionally, the supplied hostname will be used for the NetBIOS name.
 Two users will be created and given various access to four shares.
-Ommitting users from a share results in guest access.
+Omitting users from a share results in guest access.
 The `public` share will have guest access and be browsable.
 
 
